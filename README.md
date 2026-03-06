@@ -42,7 +42,7 @@
 see also ```transcript_console.txt```
 ## Diagram
 ![diagram](https://github.com/MnoZombie956/boring.cyclesLAOCII/blob/main/diagram.png?raw=true)
-## Program example
+## Program example 1 
 | Binary    | DIN | CCs | op         | r0 r1 r2 r3 |
 | --------- | --- | --- | ---------- | ----------- |
 | 001000000 | 10  | 0   | MVI R0, #2 | 2 0 0 0 |
@@ -62,3 +62,42 @@ see also ```transcript_console.txt```
 | 101001001 |     | 14  | SLT R1, R1 | 1 0 1 1 |
 | 010000011 |     | 15  | ADD R0, R3 | 2 0 1 1 | 
 | 010001010 |     | 16  | ADD R1, R2 | 2 1 1 1 |
+
+## Program example 2 - Risc Cycles: LOOP
+| op |
+| -- |
+| MVI R2, #1 | 
+| MVI R4, #10 |
+| MV R5,R7 |
+| SUB R4, R2 | 
+| MVNZ  R7,R5 | 
+
+## Program example 3 - Risc Cycles: LOGIC
+
+| op | R0 R1 R2 R3 |
+| -- | --- |
+| MVI R0, #2 | 2 0 0 0 |
+| MVI R1, #3 | 2 3 0 0 |
+| ADD R1, R0 | 2 5 0 0 |
+| MVI R2, #6 | 2 5 6 0 |
+| SUB R2, R1 | 2 5 1 0 |
+| MV R3, R2 | 2 5 1 1 |
+| OR R0, R3 | 3 5 1 1 |
+| SLL R0, R3 | 6 5 1 1 |
+| SRL R0, R3 | 3 5 1 1 |
+| SLT R0, R1 | 1 5 1 1 |
+| SLT R0, R3 | 0 5 1 1 |
+| MVI R3, #3 | 0 5 1 3 |
+| ADD R0, R3 | 3 5 1 3 |
+| LD R2, R3 | 3 5 4 3 |
+| ADD R2, R3 | 3 5 7 3 |
+| ST R2, R0 | 3 5 7 3 |
+| LD R0, R0 | 7 5 7 3 |
+| SUB R0, R3 |4 5 7 3 |
+| MVI R0, #0 |0 5 7 3 |
+| ADD R0, R0 |0 5 7 3 |
+| MVNZ R0, R2 | 0 5 7 3 |
+| SUB R3, R0 | 0 5 7 3 |
+| MVNZ R2, R3 | 0 5 3 3 |
+
+
